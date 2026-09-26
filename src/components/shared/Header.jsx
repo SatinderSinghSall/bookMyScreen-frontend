@@ -2,15 +2,16 @@ import React, { useState } from "react";
 import { FaSearch, FaChevronDown, FaBars } from "react-icons/fa";
 
 import mainLogo from "../../assets/main-icon.png";
+import map from "../../assets/pin.gif";
 
 import MenuDrawer from "../MenuDrawer";
 import LocationModal from "../LocationModal";
+import { userLocation } from "../../context/LocationContext";
 
 const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [locationOpen, setLocationOpen] = useState(false);
-
-  const [location, setLocation] = useState("Bhubaneswar");
+  const { location, loading, error, setLocation } = userLocation();
 
   return (
     <>
@@ -111,29 +112,31 @@ const Header = () => {
                   className="
                     flex
                     items-center
-
-                    gap-[7px]
-
+                    gap-1.5
                     text-[14px]
-
                     font-medium
-
                     text-[#222]
-
                     hover:text-[#f84464]
-
-                    transition
-
+                    transition-colors
                     cursor-pointer
+                    h-[32px]
                   "
                 >
-                  <span>{location}</span>
+                  {loading ? (
+                    <img
+                      src={map}
+                      alt="Loading location"
+                      className="w-7 h-7 object-contain"
+                    />
+                  ) : (
+                    <>
+                      <span className="whitespace-nowrap">
+                        {location || "Select Location"}
+                      </span>
 
-                  <FaChevronDown
-                    className="
-                      text-[9px]
-                    "
-                  />
+                      <FaChevronDown className="text-[9px] mt-[1px]" />
+                    </>
+                  )}
                 </button>
 
                 {/* SIGN IN */}
