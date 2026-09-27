@@ -3,6 +3,7 @@ import { createRoot } from "react-dom/client";
 import { BrowserRouter, BrowserRouter as Router } from "react-router-dom";
 
 import "./index.css";
+
 import App from "./App.jsx";
 import { LocationProvider } from "./context/LocationContext.jsx";
 

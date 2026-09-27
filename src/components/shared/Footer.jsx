@@ -39,7 +39,7 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="w-full bg-[#2b2b2b] text-gray-400">
+    <footer className="w-full bg-[#2b2b2b] text-gray-400 mt-25">
       <DeveloperCredit />
 
       {/* =====================================================
