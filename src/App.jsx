@@ -5,6 +5,7 @@ import Footer from "./components/shared/Footer";
 
 // Pages:
 import Home from "./pages/Home";
+import Movies from "./pages/Movies";
 
 function App() {
   return (
@@ -15,7 +16,7 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/profile/:id" element={<h1>My Profile</h1>} />
-            <Route path="/movies" element={<h1>Movies</h1>} />
+            <Route path="/movies" element={<Movies />} />
           </Routes>
         </main>
         <Footer />
